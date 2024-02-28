@@ -32,9 +32,9 @@ public class PersonaServiceImpl implements IPersonaService {
 	}
 
 	@Override
-	public void eliminarPorCedual(String cedula) {
+	public void eliminarPorCedula(String cedula) {
 		// TODO Auto-generated method stub
-		this.iPersonaRepository.eliminarPorCedual(cedula);
+		this.iPersonaRepository.eliminarPorCedula(cedula);
 	}
 
 	@Override

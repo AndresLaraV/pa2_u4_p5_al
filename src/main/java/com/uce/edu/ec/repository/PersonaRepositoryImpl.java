@@ -39,7 +39,7 @@ public class PersonaRepositoryImpl implements IPersonaRepository {
 	}
 
 	@Override
-	public void eliminarPorCedual(String cedula) {
+	public void eliminarPorCedula(String cedula) {
 		// TODO Auto-generated method stub
 		this.entityManager.remove(this.consultarPorCedula(cedula));
 	}

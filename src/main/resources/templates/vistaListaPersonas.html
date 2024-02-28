@@ -8,14 +8,17 @@
 </head>
 
 <body>
-	<h1>HOLA MUNDO</h1>
+	<h1>LISTA DE PERSONAS:</h1>
 
 	<table>
 		<thead>
+
 			<th>Cedula</th>
 			<th>Nombre</th>
 			<th>Apellido</th>
 			<th>Genero</th>
+			<th>Acción1</th>
+			<th>Acción2</th>
 		</thead>
 		<tbody>
 			<tr th:each="persona:${personas}">
@@ -23,6 +26,18 @@
 				<td th:text="${persona.nombre}"></td>
 				<td th:text="${persona.apellido}"></td>
 				<td th:text="${persona.genero}"></td>
+				<td>
+					<form th:action="@{/personas/buscarPorCedula/{cedulaPersona}(cedulaPersona=${persona.cedula})}"
+						th:method="GET">
+						<input type="submit" value="Editar">
+					</form>
+				</td>
+				<td>
+					<form th:action="@{/personas/borrarPorCedula/{cedula}(cedula=${persona.cedula})}"
+						th:method="DELETE">
+						<input type="submit" value="Eliminar">
+					</form>
+				</td>
 			</tr>
 		</tbody>
 	</table>
